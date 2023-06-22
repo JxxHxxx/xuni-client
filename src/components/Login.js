@@ -2,6 +2,13 @@ import axios from 'axios';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const setUserInfo = (response) => {
+    localStorage.setItem('access_code', response.headers.authorization);
+    localStorage.setItem('username', response.data.response.name);
+    localStorage.setItem('useremail', response.data.response.email);
+    localStorage.setItem('userId', response.data.response.userId);
+}
+
 const Login = () => {
     const navigate = useNavigate();
 
@@ -9,16 +16,13 @@ const Login = () => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-
+        
         await axios.post("http://jsmtmt.shop/auth/login", {
             email,
             password
         })
             .then(response => {
-                localStorage.setItem('access_code', response.headers.authorization);
-                localStorage.setItem('username', response.data.response.name);
-                localStorage.setItem('useremail', response.data.response.email);
-
+                setUserInfo(response);
                 navigate('/');
             })
             .catch(reason => console.log('reason', reason));
