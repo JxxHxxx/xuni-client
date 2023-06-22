@@ -4,6 +4,7 @@ import GroupList from './components/GroupList';
 import StudyProductList from './components/StudyProductList';
 import Login from './components/Login';
 import Home from './components/Home';
+import MyGroup from './components/MyGroup';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         </>
       } />
       <Route path='/login' element={<Login />} />
+      <Route path='/my-group' element={<MyGroup />} />
     </Routes>
   );
 }
