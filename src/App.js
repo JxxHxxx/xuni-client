@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import MyGroup from './components/MyGroup';
 import StudyProduct from './components/StudyProduct';
+import TopNavigation from './components/TopNavigation';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <Routes>
       <Route path='/' element={
         <>
+          <TopNavigation />
           <Home />
           <StudyProductList />
           <GroupList />
