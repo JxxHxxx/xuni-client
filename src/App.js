@@ -7,7 +7,7 @@ import Home from './components/Home';
 import MyGroup from './components/MyGroup';
 import StudyProduct from './components/StudyProduct';
 import BasicHeader from './components/BasicHeader';
-
+import GroupForm from './components/GroupForm';
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
       <Route path='/login' element={<Login />} />
       <Route path='/my-group' element={<MyGroup />} />
       <Route path='/study-products/:studyProductId' element={<StudyProduct />} />
+      <Route path='/create-group' element={<GroupForm />} />
     </Routes>
   );
 }
