@@ -6,7 +6,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import MyGroup from './components/MyGroup';
 import StudyProduct from './components/StudyProduct';
-import TopNavigation from './components/TopNavigation';
+import BasicHeader from './components/BasicHeader';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <Routes>
       <Route path='/' element={
         <>
-          <TopNavigation />
+          <BasicHeader />
           <Home />
           <StudyProductList />
           <GroupList />

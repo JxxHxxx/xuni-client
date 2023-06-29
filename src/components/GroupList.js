@@ -24,20 +24,22 @@ const GroupList = (className) => {
   }
 
   return (
-    <GroupStyle.LayOut>
+    <>
       <GroupStyle.Title>스터디 그룹</GroupStyle.Title>
-      {groups.map(group => (
-        <GroupStyle.GroupItem key={group.groupId}>
-          <div>Group ID : {group.groupId}</div>
-          <div>Group Status : {group.groupStatus}</div>
-          <div>주최자 : {group.host.hostName}</div>
-          <div>{group.study.category} 스터디 : {group.study.subject}</div>
-          <div>시작일 : {group.period.startDate} 종료일 : {group.period.endDate}</div>
-          <div>To {group.time.startTime} ~ {group.time.endTime}</div>
-          <div>현재 남은 스터디 좌석 : {group.capacity.leftCapacity}</div>
-        </GroupStyle.GroupItem>
-      ))}
-    </GroupStyle.LayOut>
+      <GroupStyle.Container>
+        {groups.map(group => (
+          <GroupStyle.Item key={group.groupId}>
+            <div>Group ID : {group.groupId}</div>
+            <div>Group Status : {group.groupStatus}</div>
+            <div>주최자 : {group.host.hostName}</div>
+            <div>{group.study.category} 스터디 : {group.study.subject}</div>
+            <div>시작일 : {group.period.startDate} 종료일 : {group.period.endDate}</div>
+            <div>To {group.time.startTime} ~ {group.time.endTime}</div>
+            <div>현재 남은 스터디 좌석 : {group.capacity.leftCapacity}</div>
+          </GroupStyle.Item>
+        ))}
+      </GroupStyle.Container>
+    </>
   );
 };
 

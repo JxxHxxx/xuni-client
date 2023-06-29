@@ -15,11 +15,14 @@ export const StudyProductItem = styled.section`
     box-shadow: 5px 5px 20px;
     margin: auto;
     margin-bottom: 30px;
-    transition: all 0.5s;
-    transition-delay: 0.4s;
-
+    /* &은 현재 선택된 요소를 말한다. */
     &:hover {
         background-color: powderblue;
+    }
+
+    &:active {
+        transform: translateY(2px); /* 버튼이 아래로 약간 이동하는 효과 */
+        box-shadow: 3px 3px 10px; /* 버튼 주변에 약간의 그림자 추가 */
     }
 `
 

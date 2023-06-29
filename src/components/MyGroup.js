@@ -24,7 +24,7 @@ const MyGroup = () => {
 
     useEffect(() => {
         request()
-    },[]);
+    },[]); // 의존성 배열이 없으면 무한랜더링
 
     return (
         <div>
